@@ -1,0 +1,66 @@
+/* ESTILS GENERALS */
+
+/* Para toda la web */
+body {
+    background-color: #f0f0f0;
+    min-width: 100vh;
+}
+
+/* Google Fonts - Libre Baskerville + Source Serif 4 */
+.libre-baskerville-h1 {
+  font-family: "Libre Baskerville", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.source-serif-4-p {
+  font-family: "Source Serif 4", serif;
+  font-optical-sizing: auto;
+  font-weight: 376;
+  font-style: normal;
+}
+
+
+/* Barra de Navegació */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 55px; 
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.80); 
+  backdrop-filter: blur(10px) saturate(150%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.50);
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 18px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: nowrap;     
+    overflow-x: auto;        
+    scrollbar-width: none;  
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Area para el Contenido */
+.contenido {
+    width: 900px;
+    margin: 0 auto;
+    padding: 30px 50px;
+}
