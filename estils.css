@@ -3,7 +3,7 @@
 /* Para toda la web */
 body {
     background-color: #f0f0f0;
-    min-width: 100vh;
+    min-height: 100vh;
 }
 
 /* Google Fonts - Libre Baskerville + Source Serif 4 */
@@ -23,21 +23,29 @@ body {
 
 
 /* Barra de Navegació */
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    height: 75px;
+}
+
 .topnav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  height: 55px; 
-  padding: 20px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.80); 
-  backdrop-filter: blur(10px) saturate(150%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.50);
-  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.3);
-  box-sizing: border-box;
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+    width: 100%;
+    height: 55px; 
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.40); 
+    backdrop-filter: blur(10px) saturate(150%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.50);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
 }
 
 .menu {
@@ -53,14 +61,38 @@ body {
 }
 
 .menu a {
-    color: white;
+    color: black;
     text-decoration: none;
+    font-size: 18px;
 }
 
+.menu a:hover {
+    color: #e0e0e0;
+}
 
 /* Area para el Contenido */
 .contenido {
-    width: 900px;
+    width: 80%;
     margin: 0 auto;
     padding: 30px 50px;
+}
+
+
+/* Estilos para Móviles */
+@media (max-width: 768px) {
+    .topnav {
+        width: 100%;
+        margin: 0;
+        padding: 20px 15px;
+        justify-content: center;
+    }
+
+    .menu {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .contenido {
+        padding: 20px 15px;
+    }
 }
