@@ -23,13 +23,6 @@ body {
 
 
 /* Barra de Navegació */
-.header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background-color: #f0f0f0;
-    height: 75px;
-}
 
 .topnav {
     position: sticky;
@@ -80,6 +73,9 @@ body {
 
 /* Estilos para Móviles */
 @media (max-width: 768px) {
+    /* ESTILS GENERALS */
+
+    
     .topnav {
         width: 100%;
         margin: 0;
