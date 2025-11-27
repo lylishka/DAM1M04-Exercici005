@@ -123,6 +123,32 @@ body {
 }
 
 
+/* Boton */
+.boton {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3 ease, transform 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.boton .material-symbols-outlined {
+    font-size: 20px;
+    margin-right: 5px;
+    transform: translateY(1px);
+}
+
+
 /* Targetes interactives */
 .targeta {
     position: relative;
@@ -136,6 +162,7 @@ body {
     overflow: hidden;
     background-size: cover;
     background-repeat: no-repeat;
+    transition: all 0.5s ease-in-out, background-image 0.5s l;
 }
 
 .targeta p {
@@ -156,7 +183,7 @@ body {
 }
 
 .targeta.solid:hover {
-    transform: rotate(5deg)
+    transform: rotate(5deg);
 }
 
 .targeta.liquid {
@@ -354,7 +381,7 @@ body {
 
     /* És normalitza */
     100% {
-        transform: scale(12);
+        transform: scale(1.15);
         opacity: 0.7;
     }
 }
@@ -444,12 +471,12 @@ body {
     margin-left: 50px;
 }
 
-.tipografia h2, .alineacion h2, .iconos h2 {
+.tipografia h2, .alineacion h2, .iconos h2, .colores h2 {
     margin-bottom: 20px;
     font-size: 2em;
 }
 
-.alineacion h2 {
+.alineacion h2, .iconos h2, .colores h2 {
     margin-top: 80px;
 }
 
@@ -567,7 +594,37 @@ body {
 }
 
 
+/* Botons i Links */
+.guia {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    gap: 80px;
+}
+
+
 /* Colors */
+.hex {
+    background-color: #003264;
+}
+
+.rgb {
+    background-color: rgb(0, 50, 100);
+}
+
+.hsl {
+    background-color: hsl(210, 100%, 20%);
+}
+
+.rgba {
+    background-color: rgba(0, 50, 100, 0.5);
+}
+
+.hsla {
+    background-color: hsla(210, 100%, 20%, 0.8);
+}
+
 .colors table {
     width: 60%;
     margin-top: 20px;
@@ -821,8 +878,8 @@ table tbody tr:hover {
 
         /* És normalitza */
         100% {
-            transform: scale(10);
-            opacity: 0.7;
+            transform: scale(1.15);
+            opacity: 1;
         }
     }
 
@@ -867,12 +924,12 @@ table tbody tr:hover {
         margin-left: 0;
     }
 
-    .tipografia h2, .alineacion h2, .iconos h2 {
+    .tipografia h2, .alineacion h2, .iconos h2, .colores h2 {
         margin-bottom: 15px;
-        font-size: 1.5em1;
+        font-size: 1.5em;
     }
 
-    .alineacion h2 {
+    .alineacion h2, .iconos h2, .colores h2 {
         margin-top: 40px;
     }
 
@@ -940,7 +997,25 @@ table tbody tr:hover {
         font-variation-settings: 'opsz' 40, 'wght' 100, 'FILL' 0;
     }
 
+    /* Botons i Links */
+    .contenido-dentro.secondary li {
+        margin-bottom: -200px;
+    }
 
+    .guia {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: left;
+        gap: 40px;
+    }
+
+    .guia a {
+        font-size: 1.4em;
+        transition: color 0.4s ease, letter-spacing 0.4s ease;
+    }
+
+    
     /* Taula  (Colors i Icones) */ 
     table {
         width: 100%;
