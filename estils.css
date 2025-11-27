@@ -52,13 +52,20 @@ body {
     height: 55px; 
     padding: 20px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     background: rgba(0, 50, 100, 0.60); 
     backdrop-filter: blur(10px) saturate(150%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.50);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
+}
+
+.topnav .logo {
+    width: 48px;
+    height: auto;
+    display: block;
+    margin-right: 12px;
 }
 
 .menu {
@@ -378,11 +385,16 @@ body {
         opacity: 0.9;
     }
 
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+
 
     /* És normalitza */
     100% {
-        transform: scale(1.15);
-        opacity: 0.7;
+        transform: scale(12);
+        opacity: 0.9;
     }
 }
 
@@ -552,6 +564,14 @@ body {
     font-size: 2rem;
 }
 
+.alineacion-ejemplo.baseline .material-symbols-outlined {
+    transform: translateY(0);
+}
+
+.alineacion-ejemplo.baseline .text-con-icono {
+    transform: translateY(-0.15em);
+}
+
 .alineacion-ejemplo.centro {
     align-items: center;
     font-size: 2rem;
@@ -684,6 +704,10 @@ table tbody tr:hover {
         margin: 0;
         padding: 20px 15px;
         justify-content: center;
+    }
+
+    .topnav .logo {
+        display: none;
     }
 
     
