@@ -444,7 +444,7 @@ body {
     margin-left: 50px;
 }
 
-.tipografia h2, .alineacion h2 {
+.tipografia h2, .alineacion h2, .iconos h2 {
     margin-bottom: 20px;
     font-size: 2em;
 }
@@ -453,7 +453,11 @@ body {
     margin-top: 80px;
 }
 
-/* Fuentes */
+/* Fonts i Pesos */
+.tipografia-tipo h1 .tipografia-tipo h2, .tipografia-tipo h2 {
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
 .tipo-h1 {
     font-size: 3em;
     line-height: 1.1;
@@ -502,6 +506,7 @@ body {
     font-weight: 300;
 }
 
+
 /* Icona + Text */
 .alineacion {
     padding: 20px 0;
@@ -515,12 +520,69 @@ body {
     align-items: center;
 }
 
+.alineacion-ejemplo.baseline {
+    align-items: baseline;
+    font-size: 2rem;
+}
+
+.alineacion-ejemplo.centro {
+    align-items: center;
+    font-size: 2rem;
+}
+
 .text-con-icono {
     margin-right: 8px;
     color: #007bff;
 }
 
-/* Iconas i Variables */
+
+/* Material Icons: Mides i Pesos */
+.icono-normal {
+    font-size: 24px;
+    font-variation-settings: 'opsz' 24, 'wght' 300, 'FILL' 0;
+    color: #007bff;
+}
+
+.icono-grande {
+    font-size: 40px;
+    font-variation-settings: 'opsz' 40, 'wght' 300, 'FILL' 1;
+    color: #003264
+}
+
+.icono-pequeño {
+    font-size: 20px;
+    font-variation-settings: 'opsz' 20, 'wght' 700, 'FILL' 0;
+    color: #0056b3;
+}
+
+.icono-variable {
+    font-size: 48px;
+    font-variation-settings: 'opsz' 48, 'wght' 100, 'FILL' 0;
+    color: #007bff;
+}
+
+.iconos table td:first-child {
+    font-weight: 400;
+    background-color: #d2eaff;
+}
+
+
+/* Colors */
+.colors table {
+    width: 60%;
+    margin-top: 20px;
+}
+
+.colors table td:first-child {
+    background-color: #d2eaff;
+}
+
+.colors table thead {
+    background-color: #007bff;
+    color: white
+}
+
+/* Taula */
 table {
     border: 1px solid #99eeff;
     border-collapse: collapse;
@@ -529,7 +591,7 @@ table {
 }
 
 table thead {
-    background-color: #003264;
+    background-color: #0056b3;
     color: white;
     text-align: left;
 }
@@ -541,11 +603,6 @@ table th, table td {
 
 table td:first-child {
     text-align: center;
-}
-
-table td:first-child, table th:first-child {
-    font-weight: 400;
-    background-color: #0056b3;
 }
 
 table tbody tr:nth-child(odd) {
@@ -622,7 +679,7 @@ table tbody tr:hover {
     }
 
     .targeta.solid:hover {
-        transition: rotate(5deg);
+        transform: rotate(5deg);
     }
 
     .targeta.liquid {
@@ -631,7 +688,6 @@ table tbody tr:hover {
 
     .targeta.liquid:hover {
         width: 300px;
-        height: 350px;
     }
 
     .targeta.gas {
@@ -807,5 +863,92 @@ table tbody tr:hover {
 
 
     /* ESTILS PER A guia-estil.html */
+    .contenido-dentro {
+        margin-left: 0;
+    }
+
+    .tipografia h2, .alineacion h2, .iconos h2 {
+        margin-bottom: 15px;
+        font-size: 1.5em1;
+    }
+
+    .alineacion h2 {
+        margin-top: 40px;
+    }
+
+
+    /* Fonts i Pesos */
+    .tipografia-tipo h1, .tipografia-tipo h2, .tipografia-tipo h3 {
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+
+    .tipo-h1 {
+        font-size: 2em;
+        line-height: 1.2;
+        letter-spacing: -0.05em;
+    }
+
+    .tipo-h2 {
+        font-size: 1.5em;
+        line-height: 1.3;
+        letter-spacing: -0.02em;
+    }
+
+    .tipo-h3 {
+        font-size: 0.9em;
+        line-height: 1.7;
+    }
+
+
+    /* Icona + Text */
+    .alineacion {
+        padding: 10px 0;
+    }
+
+    .alineacion-ejemplo {
+        font-size: 1.2rem;
+    }
+
+    .alineacion-ejemplo.baseline, .alineacion-ejemplo.centro {
+        font-size: 1.5rem;
+    }
+
+    .text-con-icono {
+        margin-right: 5px;
+    }
+
+
+    /* Material Icons: Mides i Pesos */
+    .icono-normal {
+        font-size: 20px;
+        font-variation-settings: 'opsz' 20, 'wght' 300, 'FILL' 0;
+    }
+
+    .icono-grande {
+        font-size: 32px;
+        font-variation-settings: 'opsz' 32, 'wght' 300, 'FILL' 1;
+    }
+
+    .icono-pequeño {
+        font-size: 16px;
+        font-variation-settings: 'opsz' 16, 'wght' 700, 'FILL' 0;
+    }
+
+    .icono-variable {
+        font-size: 40px;
+        font-variation-settings: 'opsz' 40, 'wght' 100, 'FILL' 0;
+    }
+
+
+    /* Taula  (Colors i Icones) */ 
+    table {
+        width: 100%;
+        font-size: 0.8em;
+    }
+
+    .colors table {
+        width: 100%;
+    }
 }
 
