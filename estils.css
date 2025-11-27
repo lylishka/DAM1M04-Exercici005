@@ -205,9 +205,10 @@ body {
     text-align: center;
     padding: 80px 0;
     color: #333;
-    font-size: 1.5em;
+    font-size: 1.9em;
     margin-bottom: 10px;
 }
+
 
 /* Contenidor per a l'Aigua */
 .animacion-contenedor {
@@ -223,6 +224,12 @@ body {
     align-items: center;
 }
 
+.animacion-contenedor.movimiento {
+    margin-bottom: 1000px;
+    display: block;
+}
+
+
 /* Estats de l'Aigua */
 .h2o-state {
     animation: h2o-estados 6s infinite;
@@ -235,6 +242,7 @@ body {
     transform: translate(-50%);
 }
 
+
 /* Tamany Gota */
 .gota {
     width: 50px;
@@ -243,6 +251,36 @@ body {
     border-radius: 10px;
     transform: scale(1);
     animation: tamany 1.5s ease-in-out infinite alternate;
+}
+
+
+/* Scroll Aigua */
+.aigua {
+    --box-size: 110px;
+    width: var(--box-size);
+    height: 80px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    position: absolute;
+}
+
+.aigua.blanca {
+    background: #ffffff;
+    bottom: 50px;
+    right: 0;
+}
+
+.aigua.azul {
+    background: #007bff;
+    bottom: 0;
+    left: 0;
+}
+
+.aigua.oscuro {
+    background: #003264;
+    top: 0;
+    left: 345px;
+    bottom: auto;
 }
 
 
@@ -302,6 +340,84 @@ body {
         opacity: 0.7;
     }
 }
+
+
+/* Animació per les Aigues */
+
+/* Moure Horizontalment de la Dreata a la Esquerra */
+@keyframes rightToLeft {
+    from { 
+        transform: translateX(0) translateY(0) rotate(0deg); 
+    }
+    to { 
+        transform: translateX(-690px) translateY(0) rotate(-360deg); 
+    }    
+}
+
+/* Moure a la Dreta */
+@keyframes diagonalUpRight {
+    from { 
+        transform: translateX(0) translateY(0) rotate(0deg); 
+    }
+    to { 
+        transform: translateX(690px) translateY(-570px) rotate(360deg); 
+    }    
+}
+
+/* Moure Adal */
+@keyframes topToBottom {
+    from { 
+        transform: translateX(0) translateY(0) rotate(0deg); 
+    }
+    to { 
+        transform: translateX(0) translateY(570px) rotate(180deg); 
+    }    
+}
+
+
+/* Scroll-reveal per les Aigues */
+@supports (animation-timeline: view()) {
+    /* Aigua Blanca de Inferior Dreta a Inferior Esquerra */
+    .aigua.blanca {
+        animation: rightToLeft linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 100%;
+    }
+
+    /* Aigua Azul de Inferior Esquerra a Superior Dreta */
+    .aigua.azul {
+        animation: diagonalUpRight linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 100%;
+    }
+
+    /* Aigua Oscuro de Superior Centre a Inferior Centre */
+    .aigua.oscuro {
+        animation: topToBottom linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 100%;
+    }  
+    
+    .fallbackNote {
+        display: none;
+    }
+}
+
+
+/* Fallback per les Aigues */
+@supports not (animation-timeline: view()) {
+  .fallbackNote {
+    background: rgba(255,255,255,0.9);
+    border-radius: 4px;
+    color: #c00;
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
+}
+
 
 
 
@@ -374,6 +490,148 @@ body {
 
     /* ESTILS PER A galeria.html */
 
+    /* Titul */
+    .titulo {
+       font-size: 1em; 
+    }
+
+
+    /* Contenidor per a l'Aigua */
+    .animacion-contenedor {
+        width: 330px;
+        height: 300px;
+        margin: 30px auto 30px -20px;
+    }
+
+    .animacion-contenedor.movimiento {
+        margin-bottom: 600px;
+        display: block;
+    }
+
+
+    /* Estats de l'Aigua */
+    .h2o-state {
+        height: 50px;
+        width: 50px;
+        bottom: 20px;
+    }
+
+
+    /* Tamany Gota */
+    .gota {
+        width: 25px;
+        height: 25px;
+    }
+
+
+    /* Scroll Aigua */
+    .aigua {
+        --box-size: 50px;
+        width: var(--box-size);
+        height: 35px;
+    }
+
+    .aigua.blanca {
+        bottom: 20px;
+    }
+
+    .aigua.azul {
+        bottom: 20px;
+    }
+
+    .aigua.oscuro {
+        left: 150px;
+    }
+
+
+    /* Animació per l'Estats de l'Aigua */
+    @keyframes h2o-estados {
+        /* Estat Liquid */
+        0%, 100% {
+            background-color: #007bff;
+            border-radius: 50%;
+            transform: scale(1) translateY(0) translateX(-150px);
+            opacity: 1;
+        }
+
+
+        /* Estat Gaseos */
+        37.5%, 50% {
+            background-color: #003264;
+            border-radius: 80%;
+            transform: scale(1.5) translateY(-130px) translateX(0);
+            opacity: 0.25;
+        }
+
+
+        /* Estat Sòlid */
+        62.5%, 75% {
+            background-color: #ffffff;
+            border-radius: 10%;
+            transform: scale(0.8) translateY(0) translateX(130px) rotate(45deg);
+            opacity: 1;
+        }
+
+
+        /* Transició a Líquid */
+        87.5% {
+            background-color: #007bff;
+            border-radius: 50%;
+            transform: scale(1) translateY(0) translateX(-75px); 
+            opacity: 1;        
+        }
+    }
+
+
+    /* Animació per el Tamany Gota */
+    @keyframes tamany {
+        /* És redueix */
+        0% {
+            transform: scale(1);
+            opacity: 0.9;
+        }
+
+
+        /* És normalitza */
+        100% {
+            transform: scale(10);
+            opacity: 0.7;
+        }
+    }
+
+
+
+    /* Animació per les Aigues */
+
+    /* Moure de la Dreata a la Esquerra */
+    @keyframes rightToLeft {
+        from { 
+            transform: translateX(0) translateY(0) rotate(0deg); 
+        }
+        to { 
+            transform: translateX(-300px) translateY(0) rotate(-360deg); 
+        }    
+    }
+
+    /* Moure a la Dreta */
+    @keyframes diagonalUpRight {
+        from { 
+            transform: translateX(0) translateY(0) rotate(0deg); 
+        }
+        to { 
+            transform: translateX(300px) translateY(-245px) rotate(360deg); 
+        }    
+    }
+
+    /* Moure Adal */
+    @keyframes topToBottom {
+        from { 
+            transform: translateX(0) translateY(0) rotate(0deg); 
+        }
+        to { 
+            transform: translateX(0) translateY(245px) rotate(180deg); 
+        }    
+    }
 
 
 
