@@ -520,6 +520,44 @@ body {
     color: #007bff;
 }
 
+/* Iconas i Variables */
+table {
+    border: 1px solid #99eeff;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8 px rgba(0, 0, 0, 0.5);
+    width: 80%;
+}
+
+table thead {
+    background-color: #003264;
+    color: white;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+table td:first-child {
+    text-align: center;
+}
+
+table td:first-child, table th:first-child {
+    font-weight: 400;
+    background-color: #0056b3;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: var(--color-odd-row);
+}
+
+table tbody tr:hover {
+    background: #d2eaff;
+}
+
+
+
 
 
 /* ESTILS PER A MOVILS */
