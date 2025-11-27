@@ -115,36 +115,33 @@ body {
 /* Targetes interactives */
 .targeta {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 8px 30px;
     width: 400px;
     height: 450px;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
     background-size: cover;
     background-repeat: no-repeat;
-    transition: transform 1.5s ease-in-out,
-                box-shadow 0.8s ease-in-out,
-                border-radius 0.8s ease-in-out,
-                opacity 0.5s ease-in-out;
 }
 
 .targeta p {
-    position: absolute;
-    padding: 15px;
-    width: auto;
-    z-index: 2;
-    height: 5px;
+    margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     font-size: 1.5em;
     color: #444;
+    position: relative;
+    z-index: 2;
 }
 
 
 .targeta.solid {
     background-image: url("assets/img/agua_solida.jpg");
     background-position: center 40px;
+    transition: transform 0.8s ease-in-out;
 }
 
 .targeta.solid:hover {
@@ -154,18 +151,18 @@ body {
 .targeta.liquid {
     background-image: url("assets/img/agua_liquida.jpg");
     background-position: center 40px;
+    transition: width 0.8s ease, height 0.8s ease;
 }
 
 .targeta.liquid:hover {
-    transform: scale(1.14);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
+    width: 600px;
 }
 
 .targeta.gas {
     background-image: url("assets/img/agua_gaseosa.jpg");
     background-position: center 40px;
     opacity: 0.6;
+    transition: opacity 0.8s ease;
 }
 
 .targeta.gas:hover {
@@ -477,13 +474,49 @@ body {
     }
 
 
-    /* Targetes interactives HACER LAS TRANSICIONES!!*/
+    /* Targetes interactives */
     .targetes {
         flex-direction: column;
         gap: 20px;
     }
+
+    .targeta {
+        width: 280px;
+        height: 320px;
+        padding: 6px 18px;
+        border-radius: 12px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center 10px;
+    }
+
+    .targeta.solid {
+        transition: transform 0.8s ease-in-out;
+    }
+
+    .targeta.solid:hover {
+        transition: rotate(5deg);
+    }
+
+    .targeta.liquid {
+        transition: width 0.8s ease, height 0.8s ease;
+    }
+
+    .targeta.liquid:hover {
+        width: 300px;
+        height: 350px;
+    }
+
+    .targeta.gas {
+        transition: opacity 0.8s ease;
+    }
+
+    .targeta.gas:hover {
+        opacity: 1;
+    }
+
     
-    /* Menu Secundari HACER LAS TRANSICIONES!!*/
+    /* Menu Secundari */
     .contenedor h1 {
         font-size: 1.9em;
     }
@@ -494,6 +527,7 @@ body {
 
     .secondary a {
         font-size: 1.4em;
+        transition: color 0.4s ease, letter-spacing 0.4s ease;
     }
     
 
@@ -510,11 +544,11 @@ body {
     .animacion-contenedor {
         width: 330px;
         height: 300px;
-        margin: 30px auto 30px -20px;
+        margin: 50px auto;
     }
 
     .animacion-contenedor.movimiento {
-        margin-bottom: 600px;
+        margin-bottom: 575px;
         display: block;
     }
 
