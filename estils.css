@@ -54,8 +54,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 50, 100, 0.60); 
-    backdrop-filter: blur(10px) saturate(150%);
+    background: rgba(0, 50, 100, 0.70); 
+    backdrop-filter: blur(20px) saturate(150%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.50);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
@@ -140,7 +140,7 @@ body {
     color: white;
     text-decoration: none;
     border-radius: 8px;
-    font-weight: 500;
+    font-weight: 300;
     transition: background-color 0.3 ease, transform 0.3s ease;
 }
 
@@ -170,6 +170,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     transition: all 0.5s ease-in-out, background-image 0.5s l;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .targeta p {
@@ -264,7 +265,7 @@ body {
 
 /* Contenidor per a l'Aigua */
 .animacion-contenedor {
-    background-color: #d2eaff;
+    background-color: #f0f8ff;
     margin: 50px auto;
     width: 800px;
     height: 700px;
@@ -299,8 +300,6 @@ body {
 .gota {
     width: 50px;
     height: 50px;
-    background-color: #007bff;
-    border-radius: 10px;
     transform: scale(1);
     animation: tamany 1.5s ease-in-out infinite alternate;
 }
@@ -308,28 +307,30 @@ body {
 
 /* Scroll Aigua */
 .aigua {
-    --box-size: 110px;
+    --box-size: 120px;
     width: var(--box-size);
-    height: 80px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    height: var(--box-size);
     position: absolute;
 }
 
-.aigua.blanca {
-    background: #ffffff;
+.aigua.material-symbols-outlined {
+    font-size: 80px;
+}
+
+.aigua.negra {
+    color: black;
     bottom: 50px;
     right: 0;
 }
 
 .aigua.azul {
-    background: #007bff;
+    color: #007bff;
     bottom: 0;
     left: 0;
 }
 
 .aigua.oscuro {
-    background: #003264;
+    color: #003264;
     top: 0;
     left: 345px;
     bottom: auto;
@@ -435,7 +436,7 @@ body {
 /* Scroll-reveal per les Aigues */
 @supports (animation-timeline: view()) {
     /* Aigua Blanca de Inferior Dreta a Inferior Esquerra */
-    .aigua.blanca {
+    .aigua.negra {
         animation: rightToLeft linear both;
         animation-timeline: view();
         animation-range: entry 0% cover 100%;
@@ -652,6 +653,7 @@ body {
 
 .colors table td:first-child {
     background-color: #d2eaff;
+    width: 15px;
 }
 
 .colors table thead {
