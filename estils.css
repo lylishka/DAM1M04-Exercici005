@@ -265,7 +265,7 @@ body {
 
 /* Contenidor per a l'Aigua */
 .animacion-contenedor {
-    background-color: #f0f8ff;
+    background-color: #d2eaff;
     margin: 50px auto;
     width: 800px;
     height: 700px;
@@ -278,8 +278,9 @@ body {
 }
 
 .animacion-contenedor.movimiento {
-    margin-bottom: 1000px;
+    overflow: hidden;
     display: block;
+    margin-bottom: 1000px;
 }
 
 
@@ -305,7 +306,7 @@ body {
 }
 
 
-/* Scroll Aigua */
+/* Scroll amb Gotes */
 .aigua {
     --box-size: 120px;
     width: var(--box-size);
@@ -400,9 +401,9 @@ body {
 }
 
 
-/* Animació per les Aigues */
+/* Animació per Scroll */
 
-/* Moure Horizontalment de la Dreata a la Esquerra */
+/* Moure de la Dreta a la Esquerra Horizontalment*/
 @keyframes rightToLeft {
     from { 
         transform: translateX(0) translateY(0) rotate(0deg); 
@@ -412,7 +413,7 @@ body {
     }    
 }
 
-/* Moure a la Dreta */
+/* Moure de la Esquerra a la Dreta Diagonalment */
 @keyframes diagonalUpRight {
     from { 
         transform: translateX(0) translateY(0) rotate(0deg); 
@@ -422,7 +423,7 @@ body {
     }    
 }
 
-/* Moure Adal */
+/* Moure d'Adal a Baix */
 @keyframes topToBottom {
     from { 
         transform: translateX(0) translateY(0) rotate(0deg); 
@@ -433,9 +434,9 @@ body {
 }
 
 
-/* Scroll-reveal per les Aigues */
+/* Scroll-reveal per les Gotes */
 @supports (animation-timeline: view()) {
-    /* Aigua Blanca de Inferior Dreta a Inferior Esquerra */
+    /* Aigua Negra de Inferior Dreta a Inferior Esquerra */
     .aigua.negra {
         animation: rightToLeft linear both;
         animation-timeline: view();
@@ -748,13 +749,13 @@ table tbody tr:hover {
     }
 
     .targeta {
-        width: 280px;
-        height: 320px;
+        width: 300px;
+        height: 300px;
         padding: 6px 18px;
         border-radius: 12px;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
-        background-position: center 10px;
+        background-position: center;
     }
 
     .targeta.solid {
@@ -770,6 +771,7 @@ table tbody tr:hover {
     }
 
     .targeta.liquid:hover {
+        height: 400px;
         width: 300px;
     }
 
@@ -810,7 +812,7 @@ table tbody tr:hover {
     .animacion-contenedor {
         width: 330px;
         height: 300px;
-        margin: 50px auto;
+        margin: 50px auto auto -10px;
     }
 
     .animacion-contenedor.movimiento {
@@ -841,7 +843,11 @@ table tbody tr:hover {
         height: 35px;
     }
 
-    .aigua.blanca {
+    .aigua.material-symbols-outlined {
+        font-size: 50px;
+    }
+
+    .aigua.negra {
         bottom: 20px;
     }
 
@@ -904,44 +910,45 @@ table tbody tr:hover {
 
         /* És normalitza */
         100% {
-            transform: scale(1.15);
+            transform: scale(10);
             opacity: 1;
         }
     }
 
 
 
-    /* Animació per les Aigues */
+    /* Animació per Scroll */
 
-    /* Moure de la Dreata a la Esquerra */
+    /* Moure de la Dreta a la Esquerra Horizontalment*/
     @keyframes rightToLeft {
         from { 
             transform: translateX(0) translateY(0) rotate(0deg); 
         }
         to { 
-            transform: translateX(-300px) translateY(0) rotate(-360deg); 
+            transform: translateX(-300px) translateY(0) rotate(-360deg);
         }    
     }
 
-    /* Moure a la Dreta */
+    /* Moure de la Esquerra a la Dreta Diagonalment */
     @keyframes diagonalUpRight {
         from { 
             transform: translateX(0) translateY(0) rotate(0deg); 
         }
         to { 
-            transform: translateX(300px) translateY(-245px) rotate(360deg); 
-        }    
+            transform: translateX(300px) translateY(-245px) rotate(-360deg);
+        }   
     }
 
-    /* Moure Adal */
+    /* Moure d'Adal a Baix */
     @keyframes topToBottom {
         from { 
             transform: translateX(0) translateY(0) rotate(0deg); 
         }
         to { 
-            transform: translateX(0) translateY(245px) rotate(180deg); 
-        }    
+            transform: translateX(0) translateY(245px) rotate(180deg);
+        }   
     }
+
 
 
 
