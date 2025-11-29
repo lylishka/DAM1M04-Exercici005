@@ -278,7 +278,6 @@ body {
 }
 
 .animacion-contenedor.movimiento {
-    overflow: hidden;
     display: block;
     margin-bottom: 1000px;
 }
