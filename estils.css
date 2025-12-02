@@ -639,7 +639,7 @@ body {
 }
 
 .rgba {
-    background-color: rgba(0, 50, 100, 0.5);
+    background-color: rgba(0, 50, 100, 1);
 }
 
 .hsla {
